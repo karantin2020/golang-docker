@@ -13,4 +13,5 @@ RUN         chmod -R 777 "$GOPATH"; \
             export PATH="/go/bin:$PATH"; \
             go version
 
+ENV         GOPATH /go
 ENV         PATH $GOPATH/bin:$PATH
