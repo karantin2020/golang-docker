@@ -14,4 +14,5 @@ RUN         chmod -R 777 "$GOPATH"; \
             go version
 
 ENV         GOPATH /go
+ENV         GOROOT $GOPATH
 ENV         PATH $GOPATH/bin:$PATH
