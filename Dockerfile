@@ -1,6 +1,7 @@
 FROM        golang:1.8.3-alpine3.6 as builder
 
-RUN         cp /usr/local/go/bin/* /go/bin
+RUN         cp /usr/local/go/bin/* /go/bin; \
+            cp /usr/local/go/src /go
 
 FROM        alpine:3.6
 RUN         mkdir -p /go; \
