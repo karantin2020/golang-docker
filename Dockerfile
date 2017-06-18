@@ -6,5 +6,6 @@ FROM        alpine:3.6
 RUN         mkdir -p /go
 WORKDIR     /go
 COPY        --from=builder /go/ ./
-RUN         export PATH="/go/bin:$PATH"; \
+RUN         export GOROOT="/go"; \
+            export PATH="/go/bin:$PATH"; \
             go version
