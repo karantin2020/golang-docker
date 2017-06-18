@@ -1,7 +1,7 @@
 FROM        golang:1.8.3-alpine3.6 as builder
 
 RUN         cp -af /usr/local/go/bin/* /go/bin; \
-            cp -af /usr/local/go/src /go
+            cp -af /usr/local/go /usr/local
 
 FROM        alpine:3.6
 RUN         mkdir -p /go; \
@@ -15,5 +15,5 @@ RUN         chmod -R 777 "$GOPATH"; \
             export PATH="/go/bin:$PATH"; \
             go version
 
-ENV         GOROOT /home/go
+ENV         GOROOT /usr/local/go
 ENV         PATH $GOPATH/bin:$PATH
